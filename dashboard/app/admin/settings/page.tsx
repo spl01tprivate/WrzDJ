@@ -86,7 +86,7 @@ export default function AdminSettingsPage() {
           </div>
         </HelpSpot>
 
-        <HelpSpot spotId="admin-human-verification" page={PAGE_ID} order={2} title="Human Verification" description="Require guests to complete a Turnstile CAPTCHA before interacting.">
+        <HelpSpot spotId="admin-human-verification" page={PAGE_ID} order={2} title="Human Verification" description="Cloudflare Turnstile always runs silently for guests. Toggle ON to block guests who fail; toggle OFF to only log failures.">
           <div className="form-group" style={{ marginTop: '1.5rem' }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer' }}>
               <input
@@ -96,9 +96,9 @@ export default function AdminSettingsPage() {
                 style={{ width: '1.25rem', height: '1.25rem' }}
               />
               <div>
-                <div style={{ fontWeight: 500 }}>Enforce human verification on guest pages</div>
+                <div style={{ fontWeight: 500 }}>Enforce bot protection on guest pages</div>
                 <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
-                  When ON, guests must complete a Cloudflare Turnstile check before submitting requests, voting, or searching. Default OFF (soft mode logs warnings only).
+                  Cloudflare Turnstile runs silently for all guests — most see no challenge. When ON, guests who fail the check are blocked from submitting requests, voting, or searching. When OFF, failures are only logged.
                 </div>
               </div>
             </label>
