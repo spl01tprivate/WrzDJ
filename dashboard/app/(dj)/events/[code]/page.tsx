@@ -814,7 +814,7 @@ export default function EventQueuePage() {
         <EventErrorCard
           error={error}
           fallbackMessage="Event not found or expired."
-          backLink={{ href: '/dashboard', label: 'Back to Events' }}
+          backLink={{ href: '/dashboard', label: 'Back to Dashboard' }}
         />
       </div>
     );
@@ -856,7 +856,7 @@ export default function EventQueuePage() {
       <div className="header">
         <div>
           <Link href="/dashboard" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
-            &larr; Back to Events
+            &larr; Back to Dashboard
           </Link>
           <h1 style={{ marginTop: '0.5rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '100%' }}>{event.name}</h1>
           <div style={{ marginTop: '0.5rem', fontSize: '0.875rem' }}>

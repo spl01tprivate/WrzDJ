@@ -1081,7 +1081,7 @@ describe('EventQueuePage', () => {
       render(<EventQueuePage />);
       await screen.findByText('Test Event');
 
-      const backLink = screen.getByText(/Back to Events/);
+      const backLink = screen.getByText(/Back to Dashboard/);
       expect(backLink.closest('a')).toHaveAttribute('href', '/dashboard');
     });
   });
