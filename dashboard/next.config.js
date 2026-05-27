@@ -4,11 +4,12 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
-  `connect-src 'self' ${apiUrl}`,
+  `connect-src 'self' ${apiUrl} https://challenges.cloudflare.com`,
   "font-src 'self'",
+  "frame-src 'self' https://challenges.cloudflare.com",
   "frame-ancestors 'none'",
 ].join('; ');
 
@@ -50,11 +51,12 @@ const nextConfig = {
             // Same CSP as general block but with frame-ancestors * for embedding
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'",
+              "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
-              `connect-src 'self' ${apiUrl}`,
+              `connect-src 'self' ${apiUrl} https://challenges.cloudflare.com`,
               "font-src 'self'",
+              "frame-src 'self' https://challenges.cloudflare.com",
               "frame-ancestors *",
             ].join('; '),
           },
